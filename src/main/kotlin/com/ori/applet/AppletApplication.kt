@@ -9,6 +9,8 @@ import io.micrometer.core.instrument.composite.CompositeMeterRegistry
 import io.micrometer.core.instrument.logging.LoggingMeterRegistry
 import io.micrometer.core.instrument.simple.SimpleMeterRegistry
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.ApplicationArguments
+import org.springframework.boot.ExitCodeGenerator
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.context.ConfigurableApplicationContext
@@ -55,6 +57,13 @@ class AppletApplication {
         compositeMeterRegistry.add(SimpleMeterRegistry())
         compositeMeterRegistry.add(LoggingMeterRegistry())
         return compositeMeterRegistry
+    }
+
+    @Bean
+    fun waitExitCodeGenerator(args: ApplicationArguments): ExitCodeGenerator {
+        return ExitCodeGenerator {
+            if (args.containsOption("wait")) 0 else 1
+        }
     }
 }
 
