@@ -1,6 +1,6 @@
-package com.ori.applet.data
+package com.ori.applet.data.jdbc
 
-data class User(val id: Long? = null, val userName: String? = null, val sex: SexEnum? = null, val note: String? = null)
+data class JdbcUser(val id: Long? = null, val userName: String? = null, val sex: SexEnum? = null, val note: String? = null)
 
 enum class SexEnum(val id: Int, val nameStr: String) {
     MALE(1, "男"), FEMALE(2, "女");

@@ -1,4 +1,4 @@
-package com.ori.applet.data
+package com.ori.applet.data.jdbc
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.jdbc.core.JdbcTemplate
@@ -11,9 +11,9 @@ class JdbcTmplUserServiceImpl : JdbcTmpIUserService {
     @Autowired
     private lateinit var jdbcTemplate: JdbcTemplate
 
-    private fun getUserMapper(): RowMapper<User> {
-        return RowMapper<User> { rs, rowNum ->
-            User(
+    private fun getUserMapper(): RowMapper<JdbcUser> {
+        return RowMapper<JdbcUser> { rs, rowNum ->
+            JdbcUser(
                 id = rs.getLong("id"),
                 userName = rs.getString("user_name"),
                 sex = SexEnum.getSexById(rs.getInt("sex")),
@@ -22,13 +22,13 @@ class JdbcTmplUserServiceImpl : JdbcTmpIUserService {
         }
     }
 
-    override fun getUser(id: Long): User? {
+    override fun getUser(id: Long): JdbcUser? {
         val sql = "select id,user_name,sex,note from t_user where id =?";
         val user = jdbcTemplate.queryForObject(sql, getUserMapper(), id)
         return user
     }
 
-    override fun findUsers(userName: String, note: String): List<User> {
+    override fun findUsers(userName: String, note: String): List<JdbcUser> {
         val sql = """
             select id,user_name,sex,note from t_user where user_name like concat('%',?,'%')
              and note like concat('%',?,'%')
@@ -36,18 +36,18 @@ class JdbcTmplUserServiceImpl : JdbcTmpIUserService {
         return jdbcTemplate.query(sql, getUserMapper(), userName, note)
     }
 
-    override fun insertUser(user: User) {
+    override fun insertUser(jdbcUser: JdbcUser) {
         val sql = """
             insert into t_user (user_name, sex, note) values (?, ?, ?)
         """.trimIndent()
-        jdbcTemplate.update(sql, user.userName, user.sex?.id, user.note)
+        jdbcTemplate.update(sql, jdbcUser.userName, jdbcUser.sex?.id, jdbcUser.note)
     }
 
-    override fun updateUser(user: User) {
+    override fun updateUser(jdbcUser: JdbcUser) {
         val sql = """
             update t_user set user_name = ?, sex = ?, note =? where id = ?;
         """.trimIndent()
-        jdbcTemplate.update(sql, user.userName, user.sex?.id, user.note, user.id)
+        jdbcTemplate.update(sql, jdbcUser.userName, jdbcUser.sex?.id, jdbcUser.note, jdbcUser.id)
     }
 
     override fun deleteUser(id: Long) {

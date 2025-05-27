@@ -2,11 +2,14 @@ package com.ori.applet
 
 import com.ori.applet.aop.SpringHello
 import com.ori.applet.beans.Person
-import com.ori.applet.data.JdbcTmplUserServiceImpl
-import com.ori.applet.data.SexEnum
-import com.ori.applet.data.User
+import com.ori.applet.data.jdbc.JdbcTmplUserServiceImpl
+import com.ori.applet.data.jdbc.SexEnum
+import com.ori.applet.data.jdbc.JdbcUser
+import com.ori.applet.data.jpa.JpsUserRepository
+import com.ori.applet.data.mybatis.MybatisUserService
 import com.ori.applet.metric.SalesMetrics
 import com.ori.applet.properties.DataBaseProperties
+import com.ori.applet.utils.toJson
 import io.micrometer.core.instrument.MeterRegistry
 import io.micrometer.core.instrument.composite.CompositeMeterRegistry
 import io.micrometer.core.instrument.logging.LoggingMeterRegistry
@@ -15,10 +18,12 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ExitCodeGenerator
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.autoconfigure.domain.EntityScan
 import org.springframework.boot.runApplication
 import org.springframework.context.ConfigurableApplicationContext
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.EnableAspectJAutoProxy
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 import org.springframework.scheduling.annotation.EnableScheduling
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.web.bind.annotation.RequestMapping
@@ -26,6 +31,8 @@ import org.springframework.web.bind.annotation.RestController
 import kotlin.random.Random
 
 @SpringBootApplication
+@EnableJpaRepositories(basePackages = ["com.ori.applet"])
+@EntityScan(basePackages = ["com.ori.applet"])
 @RestController
 @EnableAspectJAutoProxy
 @EnableScheduling
@@ -34,6 +41,12 @@ class AppletApplication {
     companion object {
         var applicationContext: ConfigurableApplicationContext? = null
     }
+
+    @Autowired
+    private lateinit var jpaUserRepository: JpsUserRepository
+
+    @Autowired
+    private lateinit var mybatisUserService: MybatisUserService
 
     @RequestMapping("/applet")
     fun hello(): String {
@@ -44,11 +57,23 @@ class AppletApplication {
         return springHello?.sayHello(StringBuffer("hgc")) ?: "Hello"
     }
 
-    @RequestMapping("/user")
+    @RequestMapping("/user/jdbc")
     fun getUser(): String {
         val userServiceImpl = applicationContext?.getBean(JdbcTmplUserServiceImpl::class.java)
-        userServiceImpl?.insertUser(User(null, "ori", SexEnum.MALE, "note"))
+        userServiceImpl?.insertUser(JdbcUser(null, "ori", SexEnum.MALE, "note"))
         return userServiceImpl?.getUser(1).toString()
+    }
+
+    @RequestMapping("/user/jpa")
+    fun getJpaUser(): String {
+        val user = jpaUserRepository.findByUserNameLikeOrNoteLike("ori","note")
+        return user.toJson()
+    }
+
+    @RequestMapping("/user/mybatis")
+    fun getMybatisUser(): String {
+        val user = mybatisUserService.findByName(3)
+        return user?.toJson()?:""
     }
 
     @Autowired

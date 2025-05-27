@@ -1,3 +1,4 @@
+Starting a Gradle Daemon, 1 incompatible Daemon could not be reused, use --status for details
 
 > Task :dependencies
 
@@ -144,11 +145,61 @@ compileClasspath - Compile classpath for compilation 'main' (target  (jvm)).
 |              |    \--- io.prometheus:simpleclient_tracer_common:0.12.0
 |              \--- io.prometheus:simpleclient_tracer_otel_agent:0.12.0
 |                   \--- io.prometheus:simpleclient_tracer_common:0.12.0
-+--- com.h2database:h2 -> 1.4.200
-+--- com.alibaba:druid-spring-boot-starter:1.2.8
-|    +--- com.alibaba:druid:1.2.8
-|    +--- org.slf4j:slf4j-api:1.7.25 -> 1.7.36
-|    \--- org.springframework.boot:spring-boot-autoconfigure:1.5.12.RELEASE -> 2.6.13 (*)
++--- org.springframework.boot:spring-boot-starter-jdbc -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- com.zaxxer:HikariCP:4.0.3
+|    |    \--- org.slf4j:slf4j-api:1.7.30 -> 1.7.36
+|    \--- org.springframework:spring-jdbc:5.3.23
+|         +--- org.springframework:spring-beans:5.3.23 (*)
+|         +--- org.springframework:spring-core:5.3.23 (*)
+|         \--- org.springframework:spring-tx:5.3.23
+|              +--- org.springframework:spring-beans:5.3.23 (*)
+|              \--- org.springframework:spring-core:5.3.23 (*)
++--- mysql:mysql-connector-java -> 8.0.31
+|    \--- com.mysql:mysql-connector-j:8.0.31
++--- org.springframework.boot:spring-boot-starter-data-jpa -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter-aop:2.6.13 (*)
+|    +--- org.springframework.boot:spring-boot-starter-jdbc:2.6.13 (*)
+|    +--- jakarta.transaction:jakarta.transaction-api:1.3.3
+|    +--- jakarta.persistence:jakarta.persistence-api:2.2.3
+|    +--- org.hibernate:hibernate-core:5.6.12.Final
+|    |    +--- org.jboss.logging:jboss-logging:3.4.3.Final
+|    |    +--- net.bytebuddy:byte-buddy:1.12.9 -> 1.11.22
+|    |    +--- antlr:antlr:2.7.7
+|    |    +--- org.jboss:jandex:2.4.2.Final
+|    |    +--- com.fasterxml:classmate:1.5.1
+|    |    +--- org.hibernate.common:hibernate-commons-annotations:5.1.2.Final
+|    |    |    \--- org.jboss.logging:jboss-logging:3.3.2.Final -> 3.4.3.Final
+|    |    \--- org.glassfish.jaxb:jaxb-runtime:2.3.1 -> 2.3.7
+|    |         +--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3
+|    |         +--- org.glassfish.jaxb:txw2:2.3.7
+|    |         \--- com.sun.istack:istack-commons-runtime:3.0.12
+|    +--- org.springframework.data:spring-data-jpa:2.6.9
+|    |    +--- org.springframework.data:spring-data-commons:2.6.9
+|    |    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.32 -> 1.7.36
+|    |    +--- org.springframework:spring-orm:5.3.23
+|    |    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-jdbc:5.3.23 (*)
+|    |    |    \--- org.springframework:spring-tx:5.3.23 (*)
+|    |    +--- org.springframework:spring-context:5.3.23 (*)
+|    |    +--- org.springframework:spring-aop:5.3.23 (*)
+|    |    +--- org.springframework:spring-tx:5.3.23 (*)
+|    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    \--- org.slf4j:slf4j-api:1.7.32 -> 1.7.36
+|    \--- org.springframework:spring-aspects:5.3.23
+|         \--- org.aspectj:aspectjweaver:1.9.7
++--- org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.2
+|    +--- org.springframework.boot:spring-boot-starter:3.1.0 -> 2.6.13 (*)
+|    +--- org.springframework.boot:spring-boot-starter-jdbc:3.1.0 -> 2.6.13 (*)
+|    +--- org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure:3.0.2
+|    |    \--- org.springframework.boot:spring-boot-autoconfigure:3.1.0 -> 2.6.13 (*)
+|    +--- org.mybatis:mybatis:3.5.13
+|    \--- org.mybatis:mybatis-spring:3.0.2
++--- com.google.code.gson:gson:2.10.1
 +--- com.fasterxml.jackson.module:jackson-module-kotlin -> 2.13.4
 |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
 |    +--- com.fasterxml.jackson.core:jackson-annotations:2.13.4 (*)
@@ -181,8 +232,11 @@ implementation - Implementation only dependencies for compilation 'main' (target
 +--- org.springframework.boot:spring-boot-starter-actuator (n)
 +--- org.springframework.boot:spring-boot-starter-security (n)
 +--- io.micrometer:micrometer-registry-prometheus (n)
-+--- com.h2database:h2 (n)
-+--- com.alibaba:druid-spring-boot-starter:1.2.8 (n)
++--- org.springframework.boot:spring-boot-starter-jdbc (n)
++--- mysql:mysql-connector-java (n)
++--- org.springframework.boot:spring-boot-starter-data-jpa (n)
++--- org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.2 (n)
++--- com.google.code.gson:gson:2.10.1 (n)
 +--- com.fasterxml.jackson.module:jackson-module-kotlin (n)
 +--- org.jetbrains.kotlin:kotlin-reflect:1.6.21 (n)
 \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21 (n)
@@ -305,11 +359,61 @@ implementationDependenciesMetadata
 |              |    \--- io.prometheus:simpleclient_tracer_common:0.12.0
 |              \--- io.prometheus:simpleclient_tracer_otel_agent:0.12.0
 |                   \--- io.prometheus:simpleclient_tracer_common:0.12.0
-+--- com.h2database:h2 -> 1.4.200
-+--- com.alibaba:druid-spring-boot-starter:1.2.8
-|    +--- com.alibaba:druid:1.2.8
-|    +--- org.slf4j:slf4j-api:1.7.25 -> 1.7.36
-|    \--- org.springframework.boot:spring-boot-autoconfigure:1.5.12.RELEASE -> 2.6.13 (*)
++--- org.springframework.boot:spring-boot-starter-jdbc -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- com.zaxxer:HikariCP:4.0.3
+|    |    \--- org.slf4j:slf4j-api:1.7.30 -> 1.7.36
+|    \--- org.springframework:spring-jdbc:5.3.23
+|         +--- org.springframework:spring-beans:5.3.23 (*)
+|         +--- org.springframework:spring-core:5.3.23 (*)
+|         \--- org.springframework:spring-tx:5.3.23
+|              +--- org.springframework:spring-beans:5.3.23 (*)
+|              \--- org.springframework:spring-core:5.3.23 (*)
++--- mysql:mysql-connector-java -> 8.0.31
+|    \--- com.mysql:mysql-connector-j:8.0.31
++--- org.springframework.boot:spring-boot-starter-data-jpa -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter-aop:2.6.13 (*)
+|    +--- org.springframework.boot:spring-boot-starter-jdbc:2.6.13 (*)
+|    +--- jakarta.transaction:jakarta.transaction-api:1.3.3
+|    +--- jakarta.persistence:jakarta.persistence-api:2.2.3
+|    +--- org.hibernate:hibernate-core:5.6.12.Final
+|    |    +--- org.jboss.logging:jboss-logging:3.4.3.Final
+|    |    +--- net.bytebuddy:byte-buddy:1.12.9 -> 1.11.22
+|    |    +--- antlr:antlr:2.7.7
+|    |    +--- org.jboss:jandex:2.4.2.Final
+|    |    +--- com.fasterxml:classmate:1.5.1
+|    |    +--- org.hibernate.common:hibernate-commons-annotations:5.1.2.Final
+|    |    |    \--- org.jboss.logging:jboss-logging:3.3.2.Final -> 3.4.3.Final
+|    |    \--- org.glassfish.jaxb:jaxb-runtime:2.3.1 -> 2.3.7
+|    |         +--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3
+|    |         +--- org.glassfish.jaxb:txw2:2.3.7
+|    |         \--- com.sun.istack:istack-commons-runtime:3.0.12
+|    +--- org.springframework.data:spring-data-jpa:2.6.9
+|    |    +--- org.springframework.data:spring-data-commons:2.6.9
+|    |    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.32 -> 1.7.36
+|    |    +--- org.springframework:spring-orm:5.3.23
+|    |    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-jdbc:5.3.23 (*)
+|    |    |    \--- org.springframework:spring-tx:5.3.23 (*)
+|    |    +--- org.springframework:spring-context:5.3.23 (*)
+|    |    +--- org.springframework:spring-aop:5.3.23 (*)
+|    |    +--- org.springframework:spring-tx:5.3.23 (*)
+|    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    \--- org.slf4j:slf4j-api:1.7.32 -> 1.7.36
+|    \--- org.springframework:spring-aspects:5.3.23
+|         \--- org.aspectj:aspectjweaver:1.9.7
++--- org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.2
+|    +--- org.springframework.boot:spring-boot-starter:3.1.0 -> 2.6.13 (*)
+|    +--- org.springframework.boot:spring-boot-starter-jdbc:3.1.0 -> 2.6.13 (*)
+|    +--- org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure:3.0.2
+|    |    \--- org.springframework.boot:spring-boot-autoconfigure:3.1.0 -> 2.6.13 (*)
+|    +--- org.mybatis:mybatis:3.5.13
+|    \--- org.mybatis:mybatis-spring:3.0.2
++--- com.google.code.gson:gson:2.10.1
 +--- com.fasterxml.jackson.module:jackson-module-kotlin -> 2.13.4
 |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
 |    +--- com.fasterxml.jackson.core:jackson-annotations:2.13.4 (*)
@@ -529,11 +633,62 @@ productionRuntimeClasspath
 |              |    \--- io.prometheus:simpleclient_tracer_common:0.12.0
 |              \--- io.prometheus:simpleclient_tracer_otel_agent:0.12.0
 |                   \--- io.prometheus:simpleclient_tracer_common:0.12.0
-+--- com.h2database:h2 -> 1.4.200
-+--- com.alibaba:druid-spring-boot-starter:1.2.8
-|    +--- com.alibaba:druid:1.2.8
-|    +--- org.slf4j:slf4j-api:1.7.25 -> 1.7.36
-|    \--- org.springframework.boot:spring-boot-autoconfigure:1.5.12.RELEASE -> 2.6.13 (*)
++--- org.springframework.boot:spring-boot-starter-jdbc -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- com.zaxxer:HikariCP:4.0.3
+|    |    \--- org.slf4j:slf4j-api:1.7.30 -> 1.7.36
+|    \--- org.springframework:spring-jdbc:5.3.23
+|         +--- org.springframework:spring-beans:5.3.23 (*)
+|         +--- org.springframework:spring-core:5.3.23 (*)
+|         \--- org.springframework:spring-tx:5.3.23
+|              +--- org.springframework:spring-beans:5.3.23 (*)
+|              \--- org.springframework:spring-core:5.3.23 (*)
++--- mysql:mysql-connector-java -> 8.0.31
+|    \--- com.mysql:mysql-connector-j:8.0.31
++--- org.springframework.boot:spring-boot-starter-data-jpa -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter-aop:2.6.13 (*)
+|    +--- org.springframework.boot:spring-boot-starter-jdbc:2.6.13 (*)
+|    +--- jakarta.transaction:jakarta.transaction-api:1.3.3
+|    +--- jakarta.persistence:jakarta.persistence-api:2.2.3
+|    +--- org.hibernate:hibernate-core:5.6.12.Final
+|    |    +--- org.jboss.logging:jboss-logging:3.4.3.Final
+|    |    +--- net.bytebuddy:byte-buddy:1.12.9 -> 1.11.22
+|    |    +--- antlr:antlr:2.7.7
+|    |    +--- org.jboss:jandex:2.4.2.Final
+|    |    +--- com.fasterxml:classmate:1.5.1
+|    |    +--- org.hibernate.common:hibernate-commons-annotations:5.1.2.Final
+|    |    |    \--- org.jboss.logging:jboss-logging:3.3.2.Final -> 3.4.3.Final
+|    |    \--- org.glassfish.jaxb:jaxb-runtime:2.3.1 -> 2.3.7
+|    |         +--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3
+|    |         +--- org.glassfish.jaxb:txw2:2.3.7
+|    |         +--- com.sun.istack:istack-commons-runtime:3.0.12
+|    |         \--- com.sun.activation:jakarta.activation:1.2.2
+|    +--- org.springframework.data:spring-data-jpa:2.6.9
+|    |    +--- org.springframework.data:spring-data-commons:2.6.9
+|    |    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.32 -> 1.7.36
+|    |    +--- org.springframework:spring-orm:5.3.23
+|    |    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-jdbc:5.3.23 (*)
+|    |    |    \--- org.springframework:spring-tx:5.3.23 (*)
+|    |    +--- org.springframework:spring-context:5.3.23 (*)
+|    |    +--- org.springframework:spring-aop:5.3.23 (*)
+|    |    +--- org.springframework:spring-tx:5.3.23 (*)
+|    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    \--- org.slf4j:slf4j-api:1.7.32 -> 1.7.36
+|    \--- org.springframework:spring-aspects:5.3.23
+|         \--- org.aspectj:aspectjweaver:1.9.7
++--- org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.2
+|    +--- org.springframework.boot:spring-boot-starter:3.1.0 -> 2.6.13 (*)
+|    +--- org.springframework.boot:spring-boot-starter-jdbc:3.1.0 -> 2.6.13 (*)
+|    +--- org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure:3.0.2
+|    |    \--- org.springframework.boot:spring-boot-autoconfigure:3.1.0 -> 2.6.13 (*)
+|    +--- org.mybatis:mybatis:3.5.13
+|    \--- org.mybatis:mybatis-spring:3.0.2
++--- com.google.code.gson:gson:2.10.1
 +--- com.fasterxml.jackson.module:jackson-module-kotlin -> 2.13.4
 |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
 |    +--- com.fasterxml.jackson.core:jackson-annotations:2.13.4 (*)
@@ -669,11 +824,62 @@ runtimeClasspath - Runtime classpath of compilation 'main' (target  (jvm)).
 |              |    \--- io.prometheus:simpleclient_tracer_common:0.12.0
 |              \--- io.prometheus:simpleclient_tracer_otel_agent:0.12.0
 |                   \--- io.prometheus:simpleclient_tracer_common:0.12.0
-+--- com.h2database:h2 -> 1.4.200
-+--- com.alibaba:druid-spring-boot-starter:1.2.8
-|    +--- com.alibaba:druid:1.2.8
-|    +--- org.slf4j:slf4j-api:1.7.25 -> 1.7.36
-|    \--- org.springframework.boot:spring-boot-autoconfigure:1.5.12.RELEASE -> 2.6.13 (*)
++--- org.springframework.boot:spring-boot-starter-jdbc -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- com.zaxxer:HikariCP:4.0.3
+|    |    \--- org.slf4j:slf4j-api:1.7.30 -> 1.7.36
+|    \--- org.springframework:spring-jdbc:5.3.23
+|         +--- org.springframework:spring-beans:5.3.23 (*)
+|         +--- org.springframework:spring-core:5.3.23 (*)
+|         \--- org.springframework:spring-tx:5.3.23
+|              +--- org.springframework:spring-beans:5.3.23 (*)
+|              \--- org.springframework:spring-core:5.3.23 (*)
++--- mysql:mysql-connector-java -> 8.0.31
+|    \--- com.mysql:mysql-connector-j:8.0.31
++--- org.springframework.boot:spring-boot-starter-data-jpa -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter-aop:2.6.13 (*)
+|    +--- org.springframework.boot:spring-boot-starter-jdbc:2.6.13 (*)
+|    +--- jakarta.transaction:jakarta.transaction-api:1.3.3
+|    +--- jakarta.persistence:jakarta.persistence-api:2.2.3
+|    +--- org.hibernate:hibernate-core:5.6.12.Final
+|    |    +--- org.jboss.logging:jboss-logging:3.4.3.Final
+|    |    +--- net.bytebuddy:byte-buddy:1.12.9 -> 1.11.22
+|    |    +--- antlr:antlr:2.7.7
+|    |    +--- org.jboss:jandex:2.4.2.Final
+|    |    +--- com.fasterxml:classmate:1.5.1
+|    |    +--- org.hibernate.common:hibernate-commons-annotations:5.1.2.Final
+|    |    |    \--- org.jboss.logging:jboss-logging:3.3.2.Final -> 3.4.3.Final
+|    |    \--- org.glassfish.jaxb:jaxb-runtime:2.3.1 -> 2.3.7
+|    |         +--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3
+|    |         +--- org.glassfish.jaxb:txw2:2.3.7
+|    |         +--- com.sun.istack:istack-commons-runtime:3.0.12
+|    |         \--- com.sun.activation:jakarta.activation:1.2.2
+|    +--- org.springframework.data:spring-data-jpa:2.6.9
+|    |    +--- org.springframework.data:spring-data-commons:2.6.9
+|    |    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.32 -> 1.7.36
+|    |    +--- org.springframework:spring-orm:5.3.23
+|    |    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-jdbc:5.3.23 (*)
+|    |    |    \--- org.springframework:spring-tx:5.3.23 (*)
+|    |    +--- org.springframework:spring-context:5.3.23 (*)
+|    |    +--- org.springframework:spring-aop:5.3.23 (*)
+|    |    +--- org.springframework:spring-tx:5.3.23 (*)
+|    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    \--- org.slf4j:slf4j-api:1.7.32 -> 1.7.36
+|    \--- org.springframework:spring-aspects:5.3.23
+|         \--- org.aspectj:aspectjweaver:1.9.7
++--- org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.2
+|    +--- org.springframework.boot:spring-boot-starter:3.1.0 -> 2.6.13 (*)
+|    +--- org.springframework.boot:spring-boot-starter-jdbc:3.1.0 -> 2.6.13 (*)
+|    +--- org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure:3.0.2
+|    |    \--- org.springframework.boot:spring-boot-autoconfigure:3.1.0 -> 2.6.13 (*)
+|    +--- org.mybatis:mybatis:3.5.13
+|    \--- org.mybatis:mybatis-spring:3.0.2
++--- com.google.code.gson:gson:2.10.1
 +--- com.fasterxml.jackson.module:jackson-module-kotlin -> 2.13.4
 |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
 |    +--- com.fasterxml.jackson.core:jackson-annotations:2.13.4 (*)
@@ -830,11 +1036,62 @@ testCompileClasspath - Compile classpath for compilation 'test' (target  (jvm)).
 |              |    \--- io.prometheus:simpleclient_tracer_common:0.12.0
 |              \--- io.prometheus:simpleclient_tracer_otel_agent:0.12.0
 |                   \--- io.prometheus:simpleclient_tracer_common:0.12.0
-+--- com.h2database:h2 -> 1.4.200
-+--- com.alibaba:druid-spring-boot-starter:1.2.8
-|    +--- com.alibaba:druid:1.2.8
-|    +--- org.slf4j:slf4j-api:1.7.25 -> 1.7.36
-|    \--- org.springframework.boot:spring-boot-autoconfigure:1.5.12.RELEASE -> 2.6.13 (*)
++--- org.springframework.boot:spring-boot-starter-jdbc -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- com.zaxxer:HikariCP:4.0.3
+|    |    \--- org.slf4j:slf4j-api:1.7.30 -> 1.7.36
+|    \--- org.springframework:spring-jdbc:5.3.23
+|         +--- org.springframework:spring-beans:5.3.23 (*)
+|         +--- org.springframework:spring-core:5.3.23 (*)
+|         \--- org.springframework:spring-tx:5.3.23
+|              +--- org.springframework:spring-beans:5.3.23 (*)
+|              \--- org.springframework:spring-core:5.3.23 (*)
++--- mysql:mysql-connector-java -> 8.0.31
+|    \--- com.mysql:mysql-connector-j:8.0.31
++--- org.springframework.boot:spring-boot-starter-data-jpa -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter-aop:2.6.13 (*)
+|    +--- org.springframework.boot:spring-boot-starter-jdbc:2.6.13 (*)
+|    +--- jakarta.transaction:jakarta.transaction-api:1.3.3
+|    +--- jakarta.persistence:jakarta.persistence-api:2.2.3
+|    +--- org.hibernate:hibernate-core:5.6.12.Final
+|    |    +--- org.jboss.logging:jboss-logging:3.4.3.Final
+|    |    +--- net.bytebuddy:byte-buddy:1.12.9 -> 1.11.22
+|    |    +--- antlr:antlr:2.7.7
+|    |    +--- org.jboss:jandex:2.4.2.Final
+|    |    +--- com.fasterxml:classmate:1.5.1
+|    |    +--- org.hibernate.common:hibernate-commons-annotations:5.1.2.Final
+|    |    |    \--- org.jboss.logging:jboss-logging:3.3.2.Final -> 3.4.3.Final
+|    |    \--- org.glassfish.jaxb:jaxb-runtime:2.3.1 -> 2.3.7
+|    |         +--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3
+|    |         |    \--- jakarta.activation:jakarta.activation-api:1.2.2
+|    |         +--- org.glassfish.jaxb:txw2:2.3.7
+|    |         \--- com.sun.istack:istack-commons-runtime:3.0.12
+|    +--- org.springframework.data:spring-data-jpa:2.6.9
+|    |    +--- org.springframework.data:spring-data-commons:2.6.9
+|    |    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.32 -> 1.7.36
+|    |    +--- org.springframework:spring-orm:5.3.23
+|    |    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-jdbc:5.3.23 (*)
+|    |    |    \--- org.springframework:spring-tx:5.3.23 (*)
+|    |    +--- org.springframework:spring-context:5.3.23 (*)
+|    |    +--- org.springframework:spring-aop:5.3.23 (*)
+|    |    +--- org.springframework:spring-tx:5.3.23 (*)
+|    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    \--- org.slf4j:slf4j-api:1.7.32 -> 1.7.36
+|    \--- org.springframework:spring-aspects:5.3.23
+|         \--- org.aspectj:aspectjweaver:1.9.7
++--- org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.2
+|    +--- org.springframework.boot:spring-boot-starter:3.1.0 -> 2.6.13 (*)
+|    +--- org.springframework.boot:spring-boot-starter-jdbc:3.1.0 -> 2.6.13 (*)
+|    +--- org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure:3.0.2
+|    |    \--- org.springframework.boot:spring-boot-autoconfigure:3.1.0 -> 2.6.13 (*)
+|    +--- org.mybatis:mybatis:3.5.13
+|    \--- org.mybatis:mybatis-spring:3.0.2
++--- com.google.code.gson:gson:2.10.1
 +--- com.fasterxml.jackson.module:jackson-module-kotlin -> 2.13.4
 |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
 |    +--- com.fasterxml.jackson.core:jackson-annotations:2.13.4 (*)
@@ -861,8 +1118,7 @@ testCompileClasspath - Compile classpath for compilation 'test' (target  (jvm)).
      |    |    \--- net.minidev:accessors-smart:2.4.8
      |    |         \--- org.ow2.asm:asm:9.1
      |    \--- org.slf4j:slf4j-api:1.7.30 -> 1.7.36
-     +--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3
-     |    \--- jakarta.activation:jakarta.activation-api:1.2.2
+     +--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3 (*)
      +--- org.assertj:assertj-core:3.21.0
      +--- org.hamcrest:hamcrest:2.2
      +--- org.junit.jupiter:junit-jupiter:5.8.2
@@ -1021,11 +1277,62 @@ testImplementationDependenciesMetadata
 |              |    \--- io.prometheus:simpleclient_tracer_common:0.12.0
 |              \--- io.prometheus:simpleclient_tracer_otel_agent:0.12.0
 |                   \--- io.prometheus:simpleclient_tracer_common:0.12.0
-+--- com.h2database:h2 -> 1.4.200
-+--- com.alibaba:druid-spring-boot-starter:1.2.8
-|    +--- com.alibaba:druid:1.2.8
-|    +--- org.slf4j:slf4j-api:1.7.25 -> 1.7.36
-|    \--- org.springframework.boot:spring-boot-autoconfigure:1.5.12.RELEASE -> 2.6.13 (*)
++--- org.springframework.boot:spring-boot-starter-jdbc -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- com.zaxxer:HikariCP:4.0.3
+|    |    \--- org.slf4j:slf4j-api:1.7.30 -> 1.7.36
+|    \--- org.springframework:spring-jdbc:5.3.23
+|         +--- org.springframework:spring-beans:5.3.23 (*)
+|         +--- org.springframework:spring-core:5.3.23 (*)
+|         \--- org.springframework:spring-tx:5.3.23
+|              +--- org.springframework:spring-beans:5.3.23 (*)
+|              \--- org.springframework:spring-core:5.3.23 (*)
++--- mysql:mysql-connector-java -> 8.0.31
+|    \--- com.mysql:mysql-connector-j:8.0.31
++--- org.springframework.boot:spring-boot-starter-data-jpa -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter-aop:2.6.13 (*)
+|    +--- org.springframework.boot:spring-boot-starter-jdbc:2.6.13 (*)
+|    +--- jakarta.transaction:jakarta.transaction-api:1.3.3
+|    +--- jakarta.persistence:jakarta.persistence-api:2.2.3
+|    +--- org.hibernate:hibernate-core:5.6.12.Final
+|    |    +--- org.jboss.logging:jboss-logging:3.4.3.Final
+|    |    +--- net.bytebuddy:byte-buddy:1.12.9 -> 1.11.22
+|    |    +--- antlr:antlr:2.7.7
+|    |    +--- org.jboss:jandex:2.4.2.Final
+|    |    +--- com.fasterxml:classmate:1.5.1
+|    |    +--- org.hibernate.common:hibernate-commons-annotations:5.1.2.Final
+|    |    |    \--- org.jboss.logging:jboss-logging:3.3.2.Final -> 3.4.3.Final
+|    |    \--- org.glassfish.jaxb:jaxb-runtime:2.3.1 -> 2.3.7
+|    |         +--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3
+|    |         |    \--- jakarta.activation:jakarta.activation-api:1.2.2
+|    |         +--- org.glassfish.jaxb:txw2:2.3.7
+|    |         \--- com.sun.istack:istack-commons-runtime:3.0.12
+|    +--- org.springframework.data:spring-data-jpa:2.6.9
+|    |    +--- org.springframework.data:spring-data-commons:2.6.9
+|    |    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.32 -> 1.7.36
+|    |    +--- org.springframework:spring-orm:5.3.23
+|    |    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-jdbc:5.3.23 (*)
+|    |    |    \--- org.springframework:spring-tx:5.3.23 (*)
+|    |    +--- org.springframework:spring-context:5.3.23 (*)
+|    |    +--- org.springframework:spring-aop:5.3.23 (*)
+|    |    +--- org.springframework:spring-tx:5.3.23 (*)
+|    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    \--- org.slf4j:slf4j-api:1.7.32 -> 1.7.36
+|    \--- org.springframework:spring-aspects:5.3.23
+|         \--- org.aspectj:aspectjweaver:1.9.7
++--- org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.2
+|    +--- org.springframework.boot:spring-boot-starter:3.1.0 -> 2.6.13 (*)
+|    +--- org.springframework.boot:spring-boot-starter-jdbc:3.1.0 -> 2.6.13 (*)
+|    +--- org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure:3.0.2
+|    |    \--- org.springframework.boot:spring-boot-autoconfigure:3.1.0 -> 2.6.13 (*)
+|    +--- org.mybatis:mybatis:3.5.13
+|    \--- org.mybatis:mybatis-spring:3.0.2
++--- com.google.code.gson:gson:2.10.1
 +--- com.fasterxml.jackson.module:jackson-module-kotlin -> 2.13.4
 |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
 |    +--- com.fasterxml.jackson.core:jackson-annotations:2.13.4 (*)
@@ -1052,8 +1359,7 @@ testImplementationDependenciesMetadata
      |    |    \--- net.minidev:accessors-smart:2.4.8
      |    |         \--- org.ow2.asm:asm:9.1
      |    \--- org.slf4j:slf4j-api:1.7.30 -> 1.7.36
-     +--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3
-     |    \--- jakarta.activation:jakarta.activation-api:1.2.2
+     +--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3 (*)
      +--- org.assertj:assertj-core:3.21.0
      +--- org.hamcrest:hamcrest:2.2
      +--- org.junit.jupiter:junit-jupiter:5.8.2
@@ -1218,11 +1524,63 @@ testRuntimeClasspath - Runtime classpath of compilation 'test' (target  (jvm)).
 |              |    \--- io.prometheus:simpleclient_tracer_common:0.12.0
 |              \--- io.prometheus:simpleclient_tracer_otel_agent:0.12.0
 |                   \--- io.prometheus:simpleclient_tracer_common:0.12.0
-+--- com.h2database:h2 -> 1.4.200
-+--- com.alibaba:druid-spring-boot-starter:1.2.8
-|    +--- com.alibaba:druid:1.2.8
-|    +--- org.slf4j:slf4j-api:1.7.25 -> 1.7.36
-|    \--- org.springframework.boot:spring-boot-autoconfigure:1.5.12.RELEASE -> 2.6.13 (*)
++--- org.springframework.boot:spring-boot-starter-jdbc -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- com.zaxxer:HikariCP:4.0.3
+|    |    \--- org.slf4j:slf4j-api:1.7.30 -> 1.7.36
+|    \--- org.springframework:spring-jdbc:5.3.23
+|         +--- org.springframework:spring-beans:5.3.23 (*)
+|         +--- org.springframework:spring-core:5.3.23 (*)
+|         \--- org.springframework:spring-tx:5.3.23
+|              +--- org.springframework:spring-beans:5.3.23 (*)
+|              \--- org.springframework:spring-core:5.3.23 (*)
++--- mysql:mysql-connector-java -> 8.0.31
+|    \--- com.mysql:mysql-connector-j:8.0.31
++--- org.springframework.boot:spring-boot-starter-data-jpa -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter-aop:2.6.13 (*)
+|    +--- org.springframework.boot:spring-boot-starter-jdbc:2.6.13 (*)
+|    +--- jakarta.transaction:jakarta.transaction-api:1.3.3
+|    +--- jakarta.persistence:jakarta.persistence-api:2.2.3
+|    +--- org.hibernate:hibernate-core:5.6.12.Final
+|    |    +--- org.jboss.logging:jboss-logging:3.4.3.Final
+|    |    +--- net.bytebuddy:byte-buddy:1.12.9 -> 1.11.22
+|    |    +--- antlr:antlr:2.7.7
+|    |    +--- org.jboss:jandex:2.4.2.Final
+|    |    +--- com.fasterxml:classmate:1.5.1
+|    |    +--- org.hibernate.common:hibernate-commons-annotations:5.1.2.Final
+|    |    |    \--- org.jboss.logging:jboss-logging:3.3.2.Final -> 3.4.3.Final
+|    |    \--- org.glassfish.jaxb:jaxb-runtime:2.3.1 -> 2.3.7
+|    |         +--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3
+|    |         |    \--- jakarta.activation:jakarta.activation-api:1.2.2
+|    |         +--- org.glassfish.jaxb:txw2:2.3.7
+|    |         +--- com.sun.istack:istack-commons-runtime:3.0.12
+|    |         \--- com.sun.activation:jakarta.activation:1.2.2
+|    +--- org.springframework.data:spring-data-jpa:2.6.9
+|    |    +--- org.springframework.data:spring-data-commons:2.6.9
+|    |    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.32 -> 1.7.36
+|    |    +--- org.springframework:spring-orm:5.3.23
+|    |    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-jdbc:5.3.23 (*)
+|    |    |    \--- org.springframework:spring-tx:5.3.23 (*)
+|    |    +--- org.springframework:spring-context:5.3.23 (*)
+|    |    +--- org.springframework:spring-aop:5.3.23 (*)
+|    |    +--- org.springframework:spring-tx:5.3.23 (*)
+|    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    \--- org.slf4j:slf4j-api:1.7.32 -> 1.7.36
+|    \--- org.springframework:spring-aspects:5.3.23
+|         \--- org.aspectj:aspectjweaver:1.9.7
++--- org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.2
+|    +--- org.springframework.boot:spring-boot-starter:3.1.0 -> 2.6.13 (*)
+|    +--- org.springframework.boot:spring-boot-starter-jdbc:3.1.0 -> 2.6.13 (*)
+|    +--- org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure:3.0.2
+|    |    \--- org.springframework.boot:spring-boot-autoconfigure:3.1.0 -> 2.6.13 (*)
+|    +--- org.mybatis:mybatis:3.5.13
+|    \--- org.mybatis:mybatis-spring:3.0.2
++--- com.google.code.gson:gson:2.10.1
 +--- com.fasterxml.jackson.module:jackson-module-kotlin -> 2.13.4
 |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
 |    +--- com.fasterxml.jackson.core:jackson-annotations:2.13.4 (*)
@@ -1249,8 +1607,7 @@ testRuntimeClasspath - Runtime classpath of compilation 'test' (target  (jvm)).
      |    |    \--- net.minidev:accessors-smart:2.4.8
      |    |         \--- org.ow2.asm:asm:9.1
      |    \--- org.slf4j:slf4j-api:1.7.30 -> 1.7.36
-     +--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3
-     |    \--- jakarta.activation:jakarta.activation-api:1.2.2
+     +--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3 (*)
      +--- org.assertj:assertj-core:3.21.0
      +--- org.hamcrest:hamcrest:2.2
      +--- org.junit.jupiter:junit-jupiter:5.8.2
@@ -1303,5 +1660,5 @@ No dependencies
 
 A web-based, searchable dependency report is available by adding the --scan option.
 
-BUILD SUCCESSFUL in 1s
+BUILD SUCCESSFUL in 6s
 1 actionable task: 1 executed
