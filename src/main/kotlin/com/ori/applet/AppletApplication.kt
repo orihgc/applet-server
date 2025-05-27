@@ -2,6 +2,9 @@ package com.ori.applet
 
 import com.ori.applet.aop.SpringHello
 import com.ori.applet.beans.Person
+import com.ori.applet.data.JdbcTmplUserServiceImpl
+import com.ori.applet.data.SexEnum
+import com.ori.applet.data.User
 import com.ori.applet.metric.SalesMetrics
 import com.ori.applet.properties.DataBaseProperties
 import io.micrometer.core.instrument.MeterRegistry
@@ -20,7 +23,6 @@ import org.springframework.scheduling.annotation.EnableScheduling
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
-import sun.java2d.pipe.SpanShapeRenderer.Simple
 import kotlin.random.Random
 
 @SpringBootApplication
@@ -40,6 +42,13 @@ class AppletApplication {
         person?.service()
         val springHello = applicationContext?.getBean(SpringHello::class.java)
         return springHello?.sayHello(StringBuffer("hgc")) ?: "Hello"
+    }
+
+    @RequestMapping("/user")
+    fun getUser(): String {
+        val userServiceImpl = applicationContext?.getBean(JdbcTmplUserServiceImpl::class.java)
+        userServiceImpl?.insertUser(User(null, "ori", SexEnum.MALE, "note"))
+        return userServiceImpl?.getUser(1).toString()
     }
 
     @Autowired

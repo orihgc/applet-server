@@ -1,16 +1,4 @@
 
-Welcome to Gradle 7.5.1!
-
-Here are the highlights of this release:
- - Support for Java 18
- - Support for building with Groovy 4
- - Much more responsive continuous builds
- - Improved diagnostics for dependency resolution
-
-For more details see https://docs.gradle.org/7.5.1/release-notes.html
-
-Starting a Gradle Daemon, 1 incompatible Daemon could not be reused, use --status for details
-
 > Task :dependencies
 
 ------------------------------------------------------------
@@ -112,6 +100,55 @@ compileClasspath - Compile classpath for compilation 'main' (target  (jvm)).
 |         +--- org.springframework:spring-core:5.3.23 (*)
 |         +--- org.springframework:spring-expression:5.3.23 (*)
 |         \--- org.springframework:spring-web:5.3.23 (*)
++--- org.springframework.boot:spring-boot-starter-aop -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- org.springframework:spring-aop:5.3.23 (*)
+|    \--- org.aspectj:aspectjweaver:1.9.7
++--- org.springframework.boot:spring-boot-starter-actuator -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- org.springframework.boot:spring-boot-actuator-autoconfigure:2.6.13
+|    |    +--- org.springframework.boot:spring-boot-actuator:2.6.13
+|    |    |    \--- org.springframework.boot:spring-boot:2.6.13 (*)
+|    |    +--- org.springframework.boot:spring-boot:2.6.13 (*)
+|    |    \--- org.springframework.boot:spring-boot-autoconfigure:2.6.13 (*)
+|    \--- io.micrometer:micrometer-core:1.8.11
+|         \--- org.hdrhistogram:HdrHistogram:2.1.12
++--- org.springframework.boot:spring-boot-starter-security -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- org.springframework:spring-aop:5.3.23 (*)
+|    +--- org.springframework.security:spring-security-config:5.6.8
+|    |    +--- org.springframework.security:spring-security-core:5.6.8
+|    |    |    +--- org.springframework.security:spring-security-crypto:5.6.8
+|    |    |    +--- org.springframework:spring-aop:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-context:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    |    \--- org.springframework:spring-expression:5.3.23 (*)
+|    |    +--- org.springframework:spring-aop:5.3.23 (*)
+|    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    +--- org.springframework:spring-context:5.3.23 (*)
+|    |    \--- org.springframework:spring-core:5.3.23 (*)
+|    \--- org.springframework.security:spring-security-web:5.6.8
+|         +--- org.springframework.security:spring-security-core:5.6.8 (*)
+|         +--- org.springframework:spring-core:5.3.23 (*)
+|         +--- org.springframework:spring-aop:5.3.23 (*)
+|         +--- org.springframework:spring-beans:5.3.23 (*)
+|         +--- org.springframework:spring-context:5.3.23 (*)
+|         +--- org.springframework:spring-expression:5.3.23 (*)
+|         \--- org.springframework:spring-web:5.3.23 (*)
++--- io.micrometer:micrometer-registry-prometheus -> 1.8.11
+|    +--- io.micrometer:micrometer-core:1.8.11 (*)
+|    \--- io.prometheus:simpleclient_common:0.12.0
+|         \--- io.prometheus:simpleclient:0.12.0
+|              +--- io.prometheus:simpleclient_tracer_otel:0.12.0
+|              |    \--- io.prometheus:simpleclient_tracer_common:0.12.0
+|              \--- io.prometheus:simpleclient_tracer_otel_agent:0.12.0
+|                   \--- io.prometheus:simpleclient_tracer_common:0.12.0
++--- com.h2database:h2 -> 1.4.200
++--- com.alibaba:druid-spring-boot-starter:1.2.8
+|    +--- com.alibaba:druid:1.2.8
+|    +--- org.slf4j:slf4j-api:1.7.25 -> 1.7.36
+|    \--- org.springframework.boot:spring-boot-autoconfigure:1.5.12.RELEASE -> 2.6.13 (*)
 +--- com.fasterxml.jackson.module:jackson-module-kotlin -> 2.13.4
 |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
 |    +--- com.fasterxml.jackson.core:jackson-annotations:2.13.4 (*)
@@ -140,6 +177,12 @@ No dependencies
 
 implementation - Implementation only dependencies for compilation 'main' (target  (jvm)). (n)
 +--- org.springframework.boot:spring-boot-starter-web (n)
++--- org.springframework.boot:spring-boot-starter-aop (n)
++--- org.springframework.boot:spring-boot-starter-actuator (n)
++--- org.springframework.boot:spring-boot-starter-security (n)
++--- io.micrometer:micrometer-registry-prometheus (n)
++--- com.h2database:h2 (n)
++--- com.alibaba:druid-spring-boot-starter:1.2.8 (n)
 +--- com.fasterxml.jackson.module:jackson-module-kotlin (n)
 +--- org.jetbrains.kotlin:kotlin-reflect:1.6.21 (n)
 \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21 (n)
@@ -218,6 +261,55 @@ implementationDependenciesMetadata
 |         +--- org.springframework:spring-core:5.3.23 (*)
 |         +--- org.springframework:spring-expression:5.3.23 (*)
 |         \--- org.springframework:spring-web:5.3.23 (*)
++--- org.springframework.boot:spring-boot-starter-aop -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- org.springframework:spring-aop:5.3.23 (*)
+|    \--- org.aspectj:aspectjweaver:1.9.7
++--- org.springframework.boot:spring-boot-starter-actuator -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- org.springframework.boot:spring-boot-actuator-autoconfigure:2.6.13
+|    |    +--- org.springframework.boot:spring-boot-actuator:2.6.13
+|    |    |    \--- org.springframework.boot:spring-boot:2.6.13 (*)
+|    |    +--- org.springframework.boot:spring-boot:2.6.13 (*)
+|    |    \--- org.springframework.boot:spring-boot-autoconfigure:2.6.13 (*)
+|    \--- io.micrometer:micrometer-core:1.8.11
+|         \--- org.hdrhistogram:HdrHistogram:2.1.12
++--- org.springframework.boot:spring-boot-starter-security -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- org.springframework:spring-aop:5.3.23 (*)
+|    +--- org.springframework.security:spring-security-config:5.6.8
+|    |    +--- org.springframework.security:spring-security-core:5.6.8
+|    |    |    +--- org.springframework.security:spring-security-crypto:5.6.8
+|    |    |    +--- org.springframework:spring-aop:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-context:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    |    \--- org.springframework:spring-expression:5.3.23 (*)
+|    |    +--- org.springframework:spring-aop:5.3.23 (*)
+|    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    +--- org.springframework:spring-context:5.3.23 (*)
+|    |    \--- org.springframework:spring-core:5.3.23 (*)
+|    \--- org.springframework.security:spring-security-web:5.6.8
+|         +--- org.springframework.security:spring-security-core:5.6.8 (*)
+|         +--- org.springframework:spring-core:5.3.23 (*)
+|         +--- org.springframework:spring-aop:5.3.23 (*)
+|         +--- org.springframework:spring-beans:5.3.23 (*)
+|         +--- org.springframework:spring-context:5.3.23 (*)
+|         +--- org.springframework:spring-expression:5.3.23 (*)
+|         \--- org.springframework:spring-web:5.3.23 (*)
++--- io.micrometer:micrometer-registry-prometheus -> 1.8.11
+|    +--- io.micrometer:micrometer-core:1.8.11 (*)
+|    \--- io.prometheus:simpleclient_common:0.12.0
+|         \--- io.prometheus:simpleclient:0.12.0
+|              +--- io.prometheus:simpleclient_tracer_otel:0.12.0
+|              |    \--- io.prometheus:simpleclient_tracer_common:0.12.0
+|              \--- io.prometheus:simpleclient_tracer_otel_agent:0.12.0
+|                   \--- io.prometheus:simpleclient_tracer_common:0.12.0
++--- com.h2database:h2 -> 1.4.200
++--- com.alibaba:druid-spring-boot-starter:1.2.8
+|    +--- com.alibaba:druid:1.2.8
+|    +--- org.slf4j:slf4j-api:1.7.25 -> 1.7.36
+|    \--- org.springframework.boot:spring-boot-autoconfigure:1.5.12.RELEASE -> 2.6.13 (*)
 +--- com.fasterxml.jackson.module:jackson-module-kotlin -> 2.13.4
 |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
 |    +--- com.fasterxml.jackson.core:jackson-annotations:2.13.4 (*)
@@ -390,6 +482,58 @@ productionRuntimeClasspath
 |         +--- org.springframework:spring-core:5.3.23 (*)
 |         +--- org.springframework:spring-expression:5.3.23 (*)
 |         \--- org.springframework:spring-web:5.3.23 (*)
++--- org.springframework.boot:spring-boot-starter-aop -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- org.springframework:spring-aop:5.3.23 (*)
+|    \--- org.aspectj:aspectjweaver:1.9.7
++--- org.springframework.boot:spring-boot-starter-actuator -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- org.springframework.boot:spring-boot-actuator-autoconfigure:2.6.13
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4.2 (*)
+|    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.4 (*)
+|    |    +--- org.springframework.boot:spring-boot-actuator:2.6.13
+|    |    |    \--- org.springframework.boot:spring-boot:2.6.13 (*)
+|    |    +--- org.springframework.boot:spring-boot:2.6.13 (*)
+|    |    \--- org.springframework.boot:spring-boot-autoconfigure:2.6.13 (*)
+|    \--- io.micrometer:micrometer-core:1.8.11
+|         +--- org.hdrhistogram:HdrHistogram:2.1.12
+|         \--- org.latencyutils:LatencyUtils:2.0.3
++--- org.springframework.boot:spring-boot-starter-security -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- org.springframework:spring-aop:5.3.23 (*)
+|    +--- org.springframework.security:spring-security-config:5.6.8
+|    |    +--- org.springframework.security:spring-security-core:5.6.8
+|    |    |    +--- org.springframework.security:spring-security-crypto:5.6.8
+|    |    |    +--- org.springframework:spring-aop:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-context:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    |    \--- org.springframework:spring-expression:5.3.23 (*)
+|    |    +--- org.springframework:spring-aop:5.3.23 (*)
+|    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    +--- org.springframework:spring-context:5.3.23 (*)
+|    |    \--- org.springframework:spring-core:5.3.23 (*)
+|    \--- org.springframework.security:spring-security-web:5.6.8
+|         +--- org.springframework.security:spring-security-core:5.6.8 (*)
+|         +--- org.springframework:spring-core:5.3.23 (*)
+|         +--- org.springframework:spring-aop:5.3.23 (*)
+|         +--- org.springframework:spring-beans:5.3.23 (*)
+|         +--- org.springframework:spring-context:5.3.23 (*)
+|         +--- org.springframework:spring-expression:5.3.23 (*)
+|         \--- org.springframework:spring-web:5.3.23 (*)
++--- io.micrometer:micrometer-registry-prometheus -> 1.8.11
+|    +--- io.micrometer:micrometer-core:1.8.11 (*)
+|    \--- io.prometheus:simpleclient_common:0.12.0
+|         \--- io.prometheus:simpleclient:0.12.0
+|              +--- io.prometheus:simpleclient_tracer_otel:0.12.0
+|              |    \--- io.prometheus:simpleclient_tracer_common:0.12.0
+|              \--- io.prometheus:simpleclient_tracer_otel_agent:0.12.0
+|                   \--- io.prometheus:simpleclient_tracer_common:0.12.0
++--- com.h2database:h2 -> 1.4.200
++--- com.alibaba:druid-spring-boot-starter:1.2.8
+|    +--- com.alibaba:druid:1.2.8
+|    +--- org.slf4j:slf4j-api:1.7.25 -> 1.7.36
+|    \--- org.springframework.boot:spring-boot-autoconfigure:1.5.12.RELEASE -> 2.6.13 (*)
 +--- com.fasterxml.jackson.module:jackson-module-kotlin -> 2.13.4
 |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
 |    +--- com.fasterxml.jackson.core:jackson-annotations:2.13.4 (*)
@@ -478,6 +622,58 @@ runtimeClasspath - Runtime classpath of compilation 'main' (target  (jvm)).
 |         +--- org.springframework:spring-core:5.3.23 (*)
 |         +--- org.springframework:spring-expression:5.3.23 (*)
 |         \--- org.springframework:spring-web:5.3.23 (*)
++--- org.springframework.boot:spring-boot-starter-aop -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- org.springframework:spring-aop:5.3.23 (*)
+|    \--- org.aspectj:aspectjweaver:1.9.7
++--- org.springframework.boot:spring-boot-starter-actuator -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- org.springframework.boot:spring-boot-actuator-autoconfigure:2.6.13
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4.2 (*)
+|    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.4 (*)
+|    |    +--- org.springframework.boot:spring-boot-actuator:2.6.13
+|    |    |    \--- org.springframework.boot:spring-boot:2.6.13 (*)
+|    |    +--- org.springframework.boot:spring-boot:2.6.13 (*)
+|    |    \--- org.springframework.boot:spring-boot-autoconfigure:2.6.13 (*)
+|    \--- io.micrometer:micrometer-core:1.8.11
+|         +--- org.hdrhistogram:HdrHistogram:2.1.12
+|         \--- org.latencyutils:LatencyUtils:2.0.3
++--- org.springframework.boot:spring-boot-starter-security -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- org.springframework:spring-aop:5.3.23 (*)
+|    +--- org.springframework.security:spring-security-config:5.6.8
+|    |    +--- org.springframework.security:spring-security-core:5.6.8
+|    |    |    +--- org.springframework.security:spring-security-crypto:5.6.8
+|    |    |    +--- org.springframework:spring-aop:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-context:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    |    \--- org.springframework:spring-expression:5.3.23 (*)
+|    |    +--- org.springframework:spring-aop:5.3.23 (*)
+|    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    +--- org.springframework:spring-context:5.3.23 (*)
+|    |    \--- org.springframework:spring-core:5.3.23 (*)
+|    \--- org.springframework.security:spring-security-web:5.6.8
+|         +--- org.springframework.security:spring-security-core:5.6.8 (*)
+|         +--- org.springframework:spring-core:5.3.23 (*)
+|         +--- org.springframework:spring-aop:5.3.23 (*)
+|         +--- org.springframework:spring-beans:5.3.23 (*)
+|         +--- org.springframework:spring-context:5.3.23 (*)
+|         +--- org.springframework:spring-expression:5.3.23 (*)
+|         \--- org.springframework:spring-web:5.3.23 (*)
++--- io.micrometer:micrometer-registry-prometheus -> 1.8.11
+|    +--- io.micrometer:micrometer-core:1.8.11 (*)
+|    \--- io.prometheus:simpleclient_common:0.12.0
+|         \--- io.prometheus:simpleclient:0.12.0
+|              +--- io.prometheus:simpleclient_tracer_otel:0.12.0
+|              |    \--- io.prometheus:simpleclient_tracer_common:0.12.0
+|              \--- io.prometheus:simpleclient_tracer_otel_agent:0.12.0
+|                   \--- io.prometheus:simpleclient_tracer_common:0.12.0
++--- com.h2database:h2 -> 1.4.200
++--- com.alibaba:druid-spring-boot-starter:1.2.8
+|    +--- com.alibaba:druid:1.2.8
+|    +--- org.slf4j:slf4j-api:1.7.25 -> 1.7.36
+|    \--- org.springframework.boot:spring-boot-autoconfigure:1.5.12.RELEASE -> 2.6.13 (*)
 +--- com.fasterxml.jackson.module:jackson-module-kotlin -> 2.13.4
 |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
 |    +--- com.fasterxml.jackson.core:jackson-annotations:2.13.4 (*)
@@ -590,6 +786,55 @@ testCompileClasspath - Compile classpath for compilation 'test' (target  (jvm)).
 |         +--- org.springframework:spring-core:5.3.23 (*)
 |         +--- org.springframework:spring-expression:5.3.23 (*)
 |         \--- org.springframework:spring-web:5.3.23 (*)
++--- org.springframework.boot:spring-boot-starter-aop -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- org.springframework:spring-aop:5.3.23 (*)
+|    \--- org.aspectj:aspectjweaver:1.9.7
++--- org.springframework.boot:spring-boot-starter-actuator -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- org.springframework.boot:spring-boot-actuator-autoconfigure:2.6.13
+|    |    +--- org.springframework.boot:spring-boot-actuator:2.6.13
+|    |    |    \--- org.springframework.boot:spring-boot:2.6.13 (*)
+|    |    +--- org.springframework.boot:spring-boot:2.6.13 (*)
+|    |    \--- org.springframework.boot:spring-boot-autoconfigure:2.6.13 (*)
+|    \--- io.micrometer:micrometer-core:1.8.11
+|         \--- org.hdrhistogram:HdrHistogram:2.1.12
++--- org.springframework.boot:spring-boot-starter-security -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- org.springframework:spring-aop:5.3.23 (*)
+|    +--- org.springframework.security:spring-security-config:5.6.8
+|    |    +--- org.springframework.security:spring-security-core:5.6.8
+|    |    |    +--- org.springframework.security:spring-security-crypto:5.6.8
+|    |    |    +--- org.springframework:spring-aop:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-context:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    |    \--- org.springframework:spring-expression:5.3.23 (*)
+|    |    +--- org.springframework:spring-aop:5.3.23 (*)
+|    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    +--- org.springframework:spring-context:5.3.23 (*)
+|    |    \--- org.springframework:spring-core:5.3.23 (*)
+|    \--- org.springframework.security:spring-security-web:5.6.8
+|         +--- org.springframework.security:spring-security-core:5.6.8 (*)
+|         +--- org.springframework:spring-core:5.3.23 (*)
+|         +--- org.springframework:spring-aop:5.3.23 (*)
+|         +--- org.springframework:spring-beans:5.3.23 (*)
+|         +--- org.springframework:spring-context:5.3.23 (*)
+|         +--- org.springframework:spring-expression:5.3.23 (*)
+|         \--- org.springframework:spring-web:5.3.23 (*)
++--- io.micrometer:micrometer-registry-prometheus -> 1.8.11
+|    +--- io.micrometer:micrometer-core:1.8.11 (*)
+|    \--- io.prometheus:simpleclient_common:0.12.0
+|         \--- io.prometheus:simpleclient:0.12.0
+|              +--- io.prometheus:simpleclient_tracer_otel:0.12.0
+|              |    \--- io.prometheus:simpleclient_tracer_common:0.12.0
+|              \--- io.prometheus:simpleclient_tracer_otel_agent:0.12.0
+|                   \--- io.prometheus:simpleclient_tracer_common:0.12.0
++--- com.h2database:h2 -> 1.4.200
++--- com.alibaba:druid-spring-boot-starter:1.2.8
+|    +--- com.alibaba:druid:1.2.8
+|    +--- org.slf4j:slf4j-api:1.7.25 -> 1.7.36
+|    \--- org.springframework.boot:spring-boot-autoconfigure:1.5.12.RELEASE -> 2.6.13 (*)
 +--- com.fasterxml.jackson.module:jackson-module-kotlin -> 2.13.4
 |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
 |    +--- com.fasterxml.jackson.core:jackson-annotations:2.13.4 (*)
@@ -732,6 +977,55 @@ testImplementationDependenciesMetadata
 |         +--- org.springframework:spring-core:5.3.23 (*)
 |         +--- org.springframework:spring-expression:5.3.23 (*)
 |         \--- org.springframework:spring-web:5.3.23 (*)
++--- org.springframework.boot:spring-boot-starter-aop -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- org.springframework:spring-aop:5.3.23 (*)
+|    \--- org.aspectj:aspectjweaver:1.9.7
++--- org.springframework.boot:spring-boot-starter-actuator -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- org.springframework.boot:spring-boot-actuator-autoconfigure:2.6.13
+|    |    +--- org.springframework.boot:spring-boot-actuator:2.6.13
+|    |    |    \--- org.springframework.boot:spring-boot:2.6.13 (*)
+|    |    +--- org.springframework.boot:spring-boot:2.6.13 (*)
+|    |    \--- org.springframework.boot:spring-boot-autoconfigure:2.6.13 (*)
+|    \--- io.micrometer:micrometer-core:1.8.11
+|         \--- org.hdrhistogram:HdrHistogram:2.1.12
++--- org.springframework.boot:spring-boot-starter-security -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- org.springframework:spring-aop:5.3.23 (*)
+|    +--- org.springframework.security:spring-security-config:5.6.8
+|    |    +--- org.springframework.security:spring-security-core:5.6.8
+|    |    |    +--- org.springframework.security:spring-security-crypto:5.6.8
+|    |    |    +--- org.springframework:spring-aop:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-context:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    |    \--- org.springframework:spring-expression:5.3.23 (*)
+|    |    +--- org.springframework:spring-aop:5.3.23 (*)
+|    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    +--- org.springframework:spring-context:5.3.23 (*)
+|    |    \--- org.springframework:spring-core:5.3.23 (*)
+|    \--- org.springframework.security:spring-security-web:5.6.8
+|         +--- org.springframework.security:spring-security-core:5.6.8 (*)
+|         +--- org.springframework:spring-core:5.3.23 (*)
+|         +--- org.springframework:spring-aop:5.3.23 (*)
+|         +--- org.springframework:spring-beans:5.3.23 (*)
+|         +--- org.springframework:spring-context:5.3.23 (*)
+|         +--- org.springframework:spring-expression:5.3.23 (*)
+|         \--- org.springframework:spring-web:5.3.23 (*)
++--- io.micrometer:micrometer-registry-prometheus -> 1.8.11
+|    +--- io.micrometer:micrometer-core:1.8.11 (*)
+|    \--- io.prometheus:simpleclient_common:0.12.0
+|         \--- io.prometheus:simpleclient:0.12.0
+|              +--- io.prometheus:simpleclient_tracer_otel:0.12.0
+|              |    \--- io.prometheus:simpleclient_tracer_common:0.12.0
+|              \--- io.prometheus:simpleclient_tracer_otel_agent:0.12.0
+|                   \--- io.prometheus:simpleclient_tracer_common:0.12.0
++--- com.h2database:h2 -> 1.4.200
++--- com.alibaba:druid-spring-boot-starter:1.2.8
+|    +--- com.alibaba:druid:1.2.8
+|    +--- org.slf4j:slf4j-api:1.7.25 -> 1.7.36
+|    \--- org.springframework.boot:spring-boot-autoconfigure:1.5.12.RELEASE -> 2.6.13 (*)
 +--- com.fasterxml.jackson.module:jackson-module-kotlin -> 2.13.4
 |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
 |    +--- com.fasterxml.jackson.core:jackson-annotations:2.13.4 (*)
@@ -877,6 +1171,58 @@ testRuntimeClasspath - Runtime classpath of compilation 'test' (target  (jvm)).
 |         +--- org.springframework:spring-core:5.3.23 (*)
 |         +--- org.springframework:spring-expression:5.3.23 (*)
 |         \--- org.springframework:spring-web:5.3.23 (*)
++--- org.springframework.boot:spring-boot-starter-aop -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- org.springframework:spring-aop:5.3.23 (*)
+|    \--- org.aspectj:aspectjweaver:1.9.7
++--- org.springframework.boot:spring-boot-starter-actuator -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- org.springframework.boot:spring-boot-actuator-autoconfigure:2.6.13
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4.2 (*)
+|    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.4 (*)
+|    |    +--- org.springframework.boot:spring-boot-actuator:2.6.13
+|    |    |    \--- org.springframework.boot:spring-boot:2.6.13 (*)
+|    |    +--- org.springframework.boot:spring-boot:2.6.13 (*)
+|    |    \--- org.springframework.boot:spring-boot-autoconfigure:2.6.13 (*)
+|    \--- io.micrometer:micrometer-core:1.8.11
+|         +--- org.hdrhistogram:HdrHistogram:2.1.12
+|         \--- org.latencyutils:LatencyUtils:2.0.3
++--- org.springframework.boot:spring-boot-starter-security -> 2.6.13
+|    +--- org.springframework.boot:spring-boot-starter:2.6.13 (*)
+|    +--- org.springframework:spring-aop:5.3.23 (*)
+|    +--- org.springframework.security:spring-security-config:5.6.8
+|    |    +--- org.springframework.security:spring-security-core:5.6.8
+|    |    |    +--- org.springframework.security:spring-security-crypto:5.6.8
+|    |    |    +--- org.springframework:spring-aop:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-context:5.3.23 (*)
+|    |    |    +--- org.springframework:spring-core:5.3.23 (*)
+|    |    |    \--- org.springframework:spring-expression:5.3.23 (*)
+|    |    +--- org.springframework:spring-aop:5.3.23 (*)
+|    |    +--- org.springframework:spring-beans:5.3.23 (*)
+|    |    +--- org.springframework:spring-context:5.3.23 (*)
+|    |    \--- org.springframework:spring-core:5.3.23 (*)
+|    \--- org.springframework.security:spring-security-web:5.6.8
+|         +--- org.springframework.security:spring-security-core:5.6.8 (*)
+|         +--- org.springframework:spring-core:5.3.23 (*)
+|         +--- org.springframework:spring-aop:5.3.23 (*)
+|         +--- org.springframework:spring-beans:5.3.23 (*)
+|         +--- org.springframework:spring-context:5.3.23 (*)
+|         +--- org.springframework:spring-expression:5.3.23 (*)
+|         \--- org.springframework:spring-web:5.3.23 (*)
++--- io.micrometer:micrometer-registry-prometheus -> 1.8.11
+|    +--- io.micrometer:micrometer-core:1.8.11 (*)
+|    \--- io.prometheus:simpleclient_common:0.12.0
+|         \--- io.prometheus:simpleclient:0.12.0
+|              +--- io.prometheus:simpleclient_tracer_otel:0.12.0
+|              |    \--- io.prometheus:simpleclient_tracer_common:0.12.0
+|              \--- io.prometheus:simpleclient_tracer_otel_agent:0.12.0
+|                   \--- io.prometheus:simpleclient_tracer_common:0.12.0
++--- com.h2database:h2 -> 1.4.200
++--- com.alibaba:druid-spring-boot-starter:1.2.8
+|    +--- com.alibaba:druid:1.2.8
+|    +--- org.slf4j:slf4j-api:1.7.25 -> 1.7.36
+|    \--- org.springframework.boot:spring-boot-autoconfigure:1.5.12.RELEASE -> 2.6.13 (*)
 +--- com.fasterxml.jackson.module:jackson-module-kotlin -> 2.13.4
 |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
 |    +--- com.fasterxml.jackson.core:jackson-annotations:2.13.4 (*)
@@ -957,5 +1303,5 @@ No dependencies
 
 A web-based, searchable dependency report is available by adding the --scan option.
 
-BUILD SUCCESSFUL in 11s
+BUILD SUCCESSFUL in 1s
 1 actionable task: 1 executed
