@@ -1,15 +1,19 @@
 package com.ori.applet.data.mybatis
 
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 @Service
-class MybatisUserService(val userMapper: UserMapper) {
+class MybatisUserService : UserMapper {
 
-    fun getUser(id: Long): MybatisUser? {
+    @Autowired
+    private lateinit var userMapper: UserMapper
+
+    override fun findById(id: Long?): MybatisUser? {
         return userMapper.findById(id)
     }
 
-    fun findByName(id:Long): MybatisUser? {
+    override fun findByName(id: Long): MybatisUser? {
         return userMapper.findByName(id)
     }
 
